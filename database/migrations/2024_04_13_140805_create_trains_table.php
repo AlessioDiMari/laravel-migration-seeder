@@ -25,10 +25,10 @@ return new class extends Migration
             $table->string('arrival');
 
             // orario di partenza
-            $table->time('departure_time');
+            $table->dateTime('departure_time');
 
             // orario d'arrivo
-            $table->time('arrival_time');
+            $table->dateTime('arrival_time');
 
             // codice
             $table->string('train_code', 6);
