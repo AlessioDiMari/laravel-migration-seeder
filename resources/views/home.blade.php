@@ -6,41 +6,45 @@
 <div class="container py-5">
     <h1>Treni Boolean</h1>
 
-    @dump($trains)
-
-
+    
+    
     <table class="table">
-        <thead>
+      <thead>
+        <tr>
+          <th scope="col">Azienda</th>
+          <th scope="col">Stazione di Partenza</th>
+          <th scope="col">Stazione di Arrivo</th>
+          <th scope="col">Orario di Partenza</th>
+          <th scope="col">Orario di Arrivo</th>
+          <th scope="col">Codice Treno</th>
+          <th scope="col">Numero Carrozze</th>
+          <th scope="col">In Orario</th>
+          <th scope="col">Cancellato</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        @foreach ($trains as $train)
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <td>{{$train->agency}}</td>
+            <td>{{$train->departure}}</td>
+            <td>{{$train->arrival}}</td>
+            <td>{{$train->departure_time}}</td>
+            <td>{{$train->arrival_time}}</td>
+            <td>{{$train->train_code}}</td>
+            <td>{{$train->carriages}}</td>
+            <td>{{$train->is_on_time ? 'Si' : 'No'}}</td>
+            <td>{{$train->is_canceled ? 'Si' : 'No'}}</td>
           </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
+            
+        @endforeach
+
+      </tbody>
     </table>
+    
+    {{-- @dump($trains) --}}
+    
+  </div>
 
-
-</div>
-
-
-@endsection
+  
+  @endsection
