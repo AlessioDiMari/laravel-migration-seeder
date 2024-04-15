@@ -31,7 +31,7 @@ return new class extends Migration
             $table->dateTime('arrival_time');
 
             // codice
-            $table->string('train_code', 6);
+            $table->string('train_code', 4);
 
             // carrozze
             $table->tinyInteger('carriages');

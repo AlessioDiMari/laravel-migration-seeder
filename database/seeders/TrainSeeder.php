@@ -17,7 +17,7 @@ class TrainSeeder extends Seeder
     {
 
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             
             $newTrain = new Train();
 
@@ -25,8 +25,8 @@ class TrainSeeder extends Seeder
             $newTrain->departure = $faker->city();
             $newTrain->arrival = $faker->city();
             $newTrain->departure_time = $faker->dateTimeBetween('-1 week','+1 week');
-            $newTrain->arrival_time = $faker->dateTimeBetween('+1 week','+2 week');
-            $newTrain->train_code = $faker->randomNumber(4, true);
+            $newTrain->arrival_time = $faker->dateTimeBetween('+2 week','+3 week');
+            $newTrain->train_code = $faker->unique()->randomNumber(4, true);
             $newTrain->carriages = $faker->numberBetween(1, 10);
             $newTrain->is_on_time = $faker->boolean();
             $newTrain->is_canceled = $faker->boolean();
